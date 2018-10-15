@@ -1,20 +1,179 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container mb-4">
 
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <!--<a class="navbar-brand" href="#">COOL TIMES</a>-->
+    <img src="src/assets/cooltimes_logo.png" width="180px">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">MAIN<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">TECH</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">SPORT</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">POLITICS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">ECONOMY</a>
+      </li>
+    </ul>
+    <span class="navbar-text p-2">
+      <h3 style="color: white"><img class="mr-2" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pjxzdmcgdmlld0JveD0iMCAwIDU4LjQ1IDU4LjAzIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojNGQ0ZDRkO308L3N0eWxlPjwvZGVmcz48dGl0bGUvPjxnIGRhdGEtbmFtZT0iTGF5ZXIgMiIgaWQ9IkxheWVyXzIiPjxnIGlkPSJpY29uIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik00OS45MywyOC4xMWE2LjQ4LDYuNDgsMCwwLDAtLjM5LTUsOS45MSw5LjkxLDAsMCwwLDcuMTQtNi4yOS42Mi42MiwwLDAsMCwuMDUtLjE0bDAtLjA3czAsMCwwLDAsMCwwLDAtLjA3YS42Ny42NywwLDAsMC0uMzMtLjY4LjcxLjcxLDAsMCwwLS40Ny0uMTJoLS4xM2MtNC43LDEtMTAsLjI5LTExLjg0LTQuNzlhMTIuNjgsMTIuNjgsMCwwLDEsLjgxLTkuODEuNjguNjgsMCwwLDAsMC0uNjRBLjU5LjU5LDAsMCwwLDQ0LjE1LDBMNDQsMGwtLjExLDBjLTYsLjc4LTkuNzEsNS43LTEwLjE0LDExLjM5QTE1Ljg2LDE1Ljg2LDAsMCwwLDI0LDkuOWMtNywxLjE2LTEzLjQ0LDguMy0xMS43NiwxNS40NEM1LjkyLDIyLjI4LTIuMjUsMjkuMi41OCwzNi40NGMxLjY2LDQuMjQsNi44Nyw2LjE2LDExLDYuNzFBMTEyLjU5LDExMi41OSwwLDAsMCwyNS43OSw0NGMtLjkxLDItMS45Miw0LTIuODksNmEuNzYuNzYsMCwwLDAsLjY1LDEuMTNjLjg3LDAsMS43MywwLDIuNiwwLTEsMS44OS0yLDMuNzktMi44Miw1Ljc0YS43NS43NSwwLDAsMCwxLjE4LjkxYzMuNDMtMy4yNCw3LjI1LTUuOTMsMTAuNTMtOS4zNmEuNzYuNzYsMCwwLDAtLjUzLTEuMjhsLTIuNTYsMGMuNi0xLDEuMTktMiwxLjc3LTNhLjc1Ljc1LDAsMCwwLC4wOS0uMjZjMy4xNiwwLDYuMzIsMCw5LjQ3LS4xMywzLjkxLS4xNCw4LjU4LjMyLDExLjg1LTIuMjFDNjEuNzIsMzYuNDYsNTcuNzUsMjYuNTcsNDkuOTMsMjguMTFaTTQyLjg1LDEuNzVjLTEuMzgsMy40NC0xLjQxLDgsLjM3LDExLjEsMi41LDQuMzUsNy4wOCw1LjI2LDExLjYyLDQuNThhOC44Miw4LjgyLDAsMCwxLTYuMTcsNC40QTcuMTQsNy4xNCwwLDAsMCw0Ny44LDIxYTYsNiwwLDAsMC03LjY0LS4zNywxMSwxMSwwLDAsMC00Ljg5LTguMjhDMzUuMzQsNy41MiwzOC4wOSwzLDQyLjg1LDEuNzVaTTMwLDQ3LjU4YS43Ni43NiwwLDAsMCwuNjUsMS4xM2MuNjksMCwxLjM4LDAsMi4wNiwwLTIuMDcsMi00LjI5LDMuNzUtNi40Niw1LjZxLjg3LTEuNzUsMS44MS0zLjQ4YS43Ni43NiwwLDAsMC0uNjUtMS4xM2wtMi42NCwwYy45MS0xLjg2LDEuODQtMy43MSwyLjY2LTUuNjEsMCwwLDAsMCwwLS4wNmgybDIuNzIsMEMzMS40MSw0NS4xNiwzMC42OCw0Ni4zNiwzMCw0Ny41OFptMjUuMzgtOC4yNGMtMi44NywzLjE0LTcuMjEsMi43NS0xMS4wOCwyLjktNC45NS4xOS05LjkuMTMtMTQuODYuMjItMy4yMywwLTYuNDUtLjE5LTkuNjctLjM1LTMuMzktLjE3LTcsMC0xMC4yNy0uODdDNS4yNyw0MC4xMywxLDM3LjM3LDEuODIsMzIuNDcsMi4xOSwzMC4yOSwyLjkzLDI4LjM0LDUsMjcuMmMyLjY3LTEuNDksNS44NS0xLjY0LDguMjMuNTdhLjc1Ljc1LDAsMCwwLDEuMTgtLjkxYy0zLjc4LTcuNjMsNC4yLTE1LjIsMTEuNC0xNS42Niw2LjU2LS40MiwxMy4yLDMuNywxMi45MywxMC44NkEuNzYuNzYsMCwwLDAsNDAsMjIuNmM0LjQ5LTQsMTEuMzIsMS4wOSw3LjkyLDYuMzFhLjc2Ljc2LDAsMCwwLC44NSwxLjFjMi41OS0xLDUuNDktLjc1LDcuMzgsMS41NFM1NywzNy40OCw1NS4zNCwzOS4zNVoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xNy45NSwxOC4yMWExNCwxNCwwLDAsMC0xLjUzLDQuMjZjLS4xNy45NCwxLjI3LDEuMzUsMS40NS40QTEyLjcyLDEyLjcyLDAsMCwxLDE5LjI1LDE5QzE5LjcxLDE4LjEyLDE4LjQyLDE3LjM3LDE3Ljk1LDE4LjIxWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTIwLjY5LDE5LjU5YS43NS43NSwwLDAsMC0xLC4yNywxOC42MSwxOC42MSwwLDAsMC0uODksMi41NC43NS43NSwwLDAsMCwxLjQ1LjRBMTYsMTYsMCwwLDEsMjEsMjAuNjEuNzguNzgsMCwwLDAsMjAuNjksMTkuNTlaIi8+PC9nPjwvZz48L3N2Zz4=" alt="Weather London , GB" width="50" height="50">13°C</h3>
+      <p style="color: white">MA <span class="font-weight-bold">ZOLTÁN</span> NÉVNAPJA VAN</p>
+    </span>
+  </nav>
+</div>
+
+<div class="container">
+  <mat-card class="mb-2">
+    <img mat-card-image src="http://jamesbondracing.com/backend/News/jssor/img/home/02.jpg" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <h1 class="display-4 font-italic">{{ "Title of a longer featured blog post" }}</h1>
+      <p class="lead my-3">{{ "Multiple lines of text that form the lede, informing new readers quickly and efficiently
+        about
+        what's most interesting in this post's contents." | slice:0:200 }}</p>
+      <p class="lead mb-0"><a href="#" class="font-weight-bold">Continue reading...</a></p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <div class="row mb-5">
+    <div class="col-md-4">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+            bred for hunting.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div class="col-md-4">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+            bred for hunting.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div class="col-md-4">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+            bred for hunting.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  <div class="row">
+    <h3 class="pl-3">RECENTLY ADDED...</h3>
+  </div>
+  <div class="row mb-5">
+    <div class="col-md-4">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+            bred for hunting.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div class="col-md-4">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+            bred for hunting.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div class="col-md-4">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+            bred for hunting.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
