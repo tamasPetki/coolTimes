@@ -10,13 +10,15 @@ import { MainNewsComponent } from './main-news/main-news.component';
 import { SecondaryNewsComponent } from './secondary-news/secondary-news.component';
 import { RecentlyAddedNewsComponent } from './recently-added-news/recently-added-news.component';
 import { HttpClientModule} from '@angular/common/http';
+import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainNewsComponent,
     SecondaryNewsComponent,
-    RecentlyAddedNewsComponent
+    RecentlyAddedNewsComponent,
+    WeatherComponent
   ],
   imports: [
     BrowserModule,

@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'CoolTimes';
+
+  showWeather = false;
+
+  toggleWeather() {
+    this.showWeather = !this.showWeather;
+    console.log('asdf');
+  }
+
+
 }
