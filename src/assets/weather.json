@@ -1,28 +1,76 @@
 [
     {
       "temp": 20,
-      "time": "12:00"
+      "prec": 3,
+      "time": "12:00",
+      "icon": "/assets/sun2.png"
     },
     {
       "temp": 24,
-      "time": "15:00"
+      "prec": 5,
+      "time": "15:00",
+      "icon": "/assets/sun2.png"
     },
     {
       "temp": 5,
-      "time": "18:00"
+      "prec": 0,
+      "time": "18:00",
+      "icon": "/assets/sun2.png"
     },
     {
       "temp": 21,
-      "time": "21:00"
+      "prec": 1,
+      "time": "21:00",
+      "icon": "/assets/sun2.png"
     },
     {
       "temp": 12,
-      "time": "24:00"
+      "prec": 2,
+      "time": "24:00",
+      "icon": "/assets/sun2.png"
     },
     {
       "temp": 30,
-      "time": "30:00"
-    }
+      "prec": 3,
+      "time": "30:00",
+      "icon": "/assets/sun2.png"
+    },
+  {
+    "temp": 20,
+    "prec": 3,
+    "time": "12:00",
+    "icon": "/assets/sun2.png"
+  },
+  {
+    "temp": 24,
+    "prec": 5,
+    "time": "15:00",
+    "icon": "/assets/sun2.png"
+  },
+  {
+    "temp": 5,
+    "prec": 0,
+    "time": "18:00",
+    "icon": "/assets/sun2.png"
+  },
+  {
+    "temp": 21,
+    "prec": 1,
+    "time": "21:00",
+    "icon": "/assets/sun2.png"
+  },
+  {
+    "temp": 12,
+    "prec": 2,
+    "time": "24:00",
+    "icon": "/assets/sun2.png"
+  },
+  {
+    "temp": 30,
+    "prec": 3,
+    "time": "30:00",
+    "icon": "/assets/sun2.png"
+  }
 ]
 
 

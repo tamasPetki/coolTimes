@@ -12,7 +12,6 @@ export class AppComponent {
 
   toggleWeather() {
     this.showWeather = !this.showWeather;
-    console.log('asdf');
   }
 
 

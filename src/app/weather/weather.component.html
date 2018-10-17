@@ -1,7 +1,11 @@
 <div class="container">
-  <mat-card class="mb-3">
-    <div *ngIf="chart">
-      <canvas id="canvas" height="50">{{ chart }}</canvas>
+  <mat-card class="mb-3 weather">
+    <div *ngIf="iconChart" style="text-align: center">
+      <p style="font-size: 20px">Weather forecast for your location</p>
+      <div style="max-width: 100%; display: flex; justify-content: space-between; padding: 0 45px">
+        <img *ngFor="let item of templist; index as i" style="display: inline-block; flex-direction: row" src="{{ iconlist[i].valueOf() }}">
+      </div>
+      <canvas id="dataCanvas" height="50">{{ dataChart }}</canvas>
     </div>
   </mat-card>
 </div>

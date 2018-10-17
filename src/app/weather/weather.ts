@@ -1,4 +1,6 @@
 export interface Weather {
   temp: number,
-  time: string
+  prec: number,
+  time: string,
+  icon: string
 }
