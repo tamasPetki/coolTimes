@@ -3,6 +3,7 @@ import {News} from '../news';
 import {RetrieverService} from '../retriever.service';
 import {MatDialog, MatDialogConfig, MatDialogRef} from '@angular/material';
 import {DialogComponent} from '../dialog/dialog.component';
+import {DialogService} from '../dialog.service';
 
 @Component({
   selector: 'app-secondary-news',
@@ -12,20 +13,7 @@ import {DialogComponent} from '../dialog/dialog.component';
 export class SecondaryNewsComponent implements OnInit {
   @Input() news: News[];
 
-  constructor(private retriever: RetrieverService, private dialog: MatDialog) { }
-
-  openDialog(article: string, title: string) {
-    const dialogConfig = new MatDialogConfig();
-
-    dialogConfig.autoFocus = true;
-
-    dialogConfig.data = {
-      title: title,
-      article: article
-    };
-
-    this.dialog.open(DialogComponent, dialogConfig);
-  }
+  constructor(private retriever: RetrieverService, public dialog: DialogService) { }
 
   ngOnInit() {
   }
