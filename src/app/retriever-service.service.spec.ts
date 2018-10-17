@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { RetrieverServiceService } from './retriever-service.service';
+import { RetrieverService } from './retriever.service';
 
-describe('RetrieverServiceService', () => {
+describe('RetrieverService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: RetrieverServiceService = TestBed.get(RetrieverServiceService);
+    const service: RetrieverService = TestBed.get(RetrieverService);
     expect(service).toBeTruthy();
   });
 });

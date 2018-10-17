@@ -1,76 +1,91 @@
 <div class="container">
-  <div class="row align-items-stretch mb-5">
-    <div class="col-md-4 d-flex">
-      <mat-card>
-        <img mat-card-image style="max-height: 220px; object-fit: cover"  src="https://i.ytimg.com/vi/IpZ7mSxWR34/maxresdefault.jpg" alt="Photo of a Shiba Inu">
+  <div class="row align-items-stretch">
+    <div class="col-md-4 d-flex mb-4" *ngFor="let new of news">
+      <mat-card (click)="openDialog(new.article, new.title)">
+        <img mat-card-image style="max-height: 220px; object-fit: cover" src="{{ new.imgurl }}" alt="photo">
         <mat-card-title-group>
           <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Scandal during a local MMA event.</mat-card-title>
-          <mat-card-subtitle>Spectator, Will Brown (31), beat one of the fighters</mat-card-subtitle>
+          <mat-card-title>{{ new.title }}</mat-card-title>
+          <mat-card-subtitle>{{ new.author }}</mat-card-subtitle>
         </mat-card-title-group>
         <mat-card-content>
-          <p>
-            Portsmouth, Australia. An unprecedented event took place during last night's MMA game. Will Brown (31) is
-            wanted after breaking into the ring and severely beating one of the main contenders for the title. He
-            probably was under influence of alcohol.
-          </p>
+          <p>{{ new.summary }}</p>
         </mat-card-content>
-        <hr>
-        <mat-card-actions class="p-2">
-          <a mat-stroked-button color="primary" class="btn m-2" href="https://www.facebook.com/sharer/sharer.php?u="
-             title="Share on Facebook" target="_blank"><i class="fa fa-facebook fa-fw"></i> Facebook</a>
-          <a mat-stroked-button color="accent" class="btn m-2" href="https://twitter.com/home?status="
-             title="Share on Twitter" target="_blank"><i class="fa fa-twitter fa-fw"></i> Twitter</a>
-        </mat-card-actions>
       </mat-card>
     </div>
-    <div class="col-md-4 d-flex">
-      <mat-card>
-        <img mat-card-image style="max-height: 220px; object-fit: cover" src="https://newevolutiondesigns.com/images/freebies/hd-wallpaper-15.jpg" alt="Photo of a Shiba Inu">
-        <mat-card-title-group>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Scandal during a local MMA event.</mat-card-title>
-          <mat-card-subtitle>Spectator, Will Brown (31), beat one of the fighters</mat-card-subtitle>
-        </mat-card-title-group>
-        <mat-card-content>
-          <p>
-            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-            bred for hunting.
-          </p>
-        </mat-card-content>
-        <hr>
-        <mat-card-actions class="p-2">
-          <a mat-stroked-button color="primary" class="btn m-2" href="https://www.facebook.com/sharer/sharer.php?u="
-             title="Share on Facebook" target="_blank"><i class="fa fa-facebook fa-fw"></i> Facebook</a>
-          <a mat-stroked-button color="accent" class="btn m-2" href="https://twitter.com/home?status="
-             title="Share on Twitter" target="_blank"><i class="fa fa-twitter fa-fw"></i> Twitter</a>
-        </mat-card-actions>
-      </mat-card>
-    </div>
-    <div class="col-md-4 d-flex">
-      <mat-card>
-        <img mat-card-image style="max-height: 220px; object-fit: cover" src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-        <mat-card-title-group>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Scandal during a local MMA event.</mat-card-title>
-          <mat-card-subtitle>Spectator, Will Brown (31), beat one of the fighters</mat-card-subtitle>
-        </mat-card-title-group>
-        <mat-card-content>
-          <p>
-            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-            bred for hunting.
-          </p>
-        </mat-card-content>
-        <hr>
-        <mat-card-actions class="p-2">
-          <a mat-stroked-button color="primary" class="btn m-2" href="https://www.facebook.com/sharer/sharer.php?u="
-             title="Share on Facebook" target="_blank"><i class="fa fa-facebook fa-fw"></i> Facebook</a>
-          <a mat-stroked-button color="accent" class="btn m-2" href="https://twitter.com/home?status="
-             title="Share on Twitter" target="_blank"><i class="fa fa-twitter fa-fw"></i> Twitter</a>
-        </mat-card-actions>
-      </mat-card>
-    </div>
+
+
+    <!--<div class="col-md-4 d-flex">-->
+    <!--<mat-card>-->
+    <!--<img mat-card-image style="max-height: 220px; object-fit: cover"  src="https://i.ytimg.com/vi/IpZ7mSxWR34/maxresdefault.jpg" alt="Photo of a Shiba Inu">-->
+    <!--<mat-card-title-group>-->
+    <!--<div mat-card-avatar class="example-header-image"></div>-->
+    <!--<mat-card-title>Scandal during a local MMA event.</mat-card-title>-->
+    <!--<mat-card-subtitle>Spectator, Will Brown (31), beat one of the fighters</mat-card-subtitle>-->
+    <!--</mat-card-title-group>-->
+    <!--<mat-card-content>-->
+    <!--<p>-->
+    <!--Portsmouth, Australia. An unprecedented event took place during last night's MMA game. Will Brown (31) is-->
+    <!--wanted after breaking into the ring and severely beating one of the main contenders for the title. He-->
+    <!--probably was under influence of alcohol.-->
+    <!--</p>-->
+    <!--</mat-card-content>-->
+    <!--<hr>-->
+    <!--<mat-card-actions class="p-2">-->
+    <!--<a mat-stroked-button color="primary" class="btn m-2" href="https://www.facebook.com/sharer/sharer.php?u="-->
+    <!--title="Share on Facebook" target="_blank"><i class="fa fa-facebook fa-fw"></i> Facebook</a>-->
+    <!--<a mat-stroked-button color="accent" class="btn m-2" href="https://twitter.com/home?status="-->
+    <!--title="Share on Twitter" target="_blank"><i class="fa fa-twitter fa-fw"></i> Twitter</a>-->
+    <!--</mat-card-actions>-->
+    <!--</mat-card>-->
+    <!--</div>-->
+    <!--<div class="col-md-4 d-flex">-->
+    <!--<mat-card>-->
+    <!--<img mat-card-image style="max-height: 220px; object-fit: cover" src="https://newevolutiondesigns.com/images/freebies/hd-wallpaper-15.jpg" alt="Photo of a Shiba Inu">-->
+    <!--<mat-card-title-group>-->
+    <!--<div mat-card-avatar class="example-header-image"></div>-->
+    <!--<mat-card-title>Scandal during a local MMA event.</mat-card-title>-->
+    <!--<mat-card-subtitle>Spectator, Will Brown (31), beat one of the fighters</mat-card-subtitle>-->
+    <!--</mat-card-title-group>-->
+    <!--<mat-card-content>-->
+    <!--<p>-->
+    <!--The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.-->
+    <!--A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally-->
+    <!--bred for hunting.-->
+    <!--</p>-->
+    <!--</mat-card-content>-->
+    <!--<hr>-->
+    <!--<mat-card-actions class="p-2">-->
+    <!--<a mat-stroked-button color="primary" class="btn m-2" href="https://www.facebook.com/sharer/sharer.php?u="-->
+    <!--title="Share on Facebook" target="_blank"><i class="fa fa-facebook fa-fw"></i> Facebook</a>-->
+    <!--<a mat-stroked-button color="accent" class="btn m-2" href="https://twitter.com/home?status="-->
+    <!--title="Share on Twitter" target="_blank"><i class="fa fa-twitter fa-fw"></i> Twitter</a>-->
+    <!--</mat-card-actions>-->
+    <!--</mat-card>-->
+    <!--</div>-->
+    <!--<div class="col-md-4 d-flex">-->
+    <!--<mat-card>-->
+    <!--<img mat-card-image style="max-height: 220px; object-fit: cover" src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">-->
+    <!--<mat-card-title-group>-->
+    <!--<div mat-card-avatar class="example-header-image"></div>-->
+    <!--<mat-card-title>Scandal during a local MMA event.</mat-card-title>-->
+    <!--<mat-card-subtitle>Spectator, Will Brown (31), beat one of the fighters</mat-card-subtitle>-->
+    <!--</mat-card-title-group>-->
+    <!--<mat-card-content>-->
+    <!--<p>-->
+    <!--The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.-->
+    <!--A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally-->
+    <!--bred for hunting.-->
+    <!--</p>-->
+    <!--</mat-card-content>-->
+    <!--<hr>-->
+    <!--<mat-card-actions class="p-2">-->
+    <!--<a mat-stroked-button color="primary" class="btn m-2" href="https://www.facebook.com/sharer/sharer.php?u="-->
+    <!--title="Share on Facebook" target="_blank"><i class="fa fa-facebook fa-fw"></i> Facebook</a>-->
+    <!--<a mat-stroked-button color="accent" class="btn m-2" href="https://twitter.com/home?status="-->
+    <!--title="Share on Twitter" target="_blank"><i class="fa fa-twitter fa-fw"></i> Twitter</a>-->
+    <!--</mat-card-actions>-->
+    <!--</mat-card>-->
+    <!--</div>-->
+    <!--</div>-->
   </div>
-</div>

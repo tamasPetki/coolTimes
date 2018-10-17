@@ -10,13 +10,16 @@ import { MainNewsComponent } from './main-news/main-news.component';
 import { SecondaryNewsComponent } from './secondary-news/secondary-news.component';
 import { RecentlyAddedNewsComponent } from './recently-added-news/recently-added-news.component';
 import { HttpClientModule} from '@angular/common/http';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainNewsComponent,
     SecondaryNewsComponent,
-    RecentlyAddedNewsComponent
+    RecentlyAddedNewsComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -24,9 +27,11 @@ import { HttpClientModule} from '@angular/common/http';
     NgbModule.forRoot(),
     MatCardModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DialogComponent]
 })
 export class AppModule { }
