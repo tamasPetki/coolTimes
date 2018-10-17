@@ -13,7 +13,9 @@ export class AppComponent implements OnInit {
 
   title = 'CoolTimes';
   news: News[];
+  actualWeather: object;
   showWeather = false;
+  nameDay: string;
 
   toggleWeather() {
     this.showWeather = !this.showWeather;
@@ -23,6 +25,8 @@ export class AppComponent implements OnInit {
   constructor(private retriever: RetrieverService) {}
 
   ngOnInit() {
-    this.retriever.getNewsObservable().subscribe((news) => this.news = news);
+    // this.retriever.getNewsObservable().subscribe((news) => this.news = news);
+    this.retriever.getActualWeatherObservable().subscribe((weather) => this.actualWeather = weather);
+    this.retriever.getNameDayObservable().subscribe((name) => this.nameDay = name);
   }
 }

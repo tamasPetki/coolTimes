@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {News} from './news';
+import {ActualWeather} from './actual-weather';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,14 @@ export class RetrieverService {
 
   public getNewsObservable(): Observable<News[]> {
     return this.http.get<News[]>('http://localhost:3000/news');
+  }
+
+  public getActualWeatherObservable(): Observable<ActualWeather> {
+    return this.http.get<ActualWeather>('http://localhost:8080/weather');
+  }
+
+  public getNameDayObservable(): Observable<string> {
+    return this.http.get('http://localhost:8080/nameday', {responseType: 'text'});
   }
 
   public getNews() {
