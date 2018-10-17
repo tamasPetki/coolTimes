@@ -22,8 +22,8 @@ export class RetrieverService {
     return this.http.get<ActualWeather>('http://localhost:8080/weather');
   }
 
-  public getForecastObservable(): Observable<Weather[]> {
-    return this.http.get<Weather[]>('http://localhost:8080/forecast');
+  public getForecastObservable(city: string): Observable<Weather[]> {
+    return this.http.get<Weather[]>('http://localhost:8080/forecast/?city=' + city);
   }
 
   public getNameDayObservable(): Observable<string> {

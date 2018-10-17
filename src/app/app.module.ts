@@ -13,6 +13,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { WeatherComponent } from './weather/weather.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { DialogComponent } from './dialog/dialog.component';
     MatCardModule,
     MatButtonModule,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

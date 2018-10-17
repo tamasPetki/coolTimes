@@ -17,7 +17,14 @@ export class WeatherComponent implements OnInit {
   iconlist = [];
   iconChart = [];
   dataChart = [];
-
+  cities = [
+    {id: 1, name: 'Budapest'},
+    {id: 2, name: 'London'},
+    {id: 3, name: 'Párizs'},
+    {id: 4, name: 'Madrid'},
+    {id: 5, name: 'Moszkva'}
+  ];
+  selectedValue = 'Budapest';
 
   constructor(private http: HttpClient, private retriever: RetrieverService) { }
 
@@ -25,10 +32,15 @@ export class WeatherComponent implements OnInit {
     // return this.http.get('/assets/weather.json');
 
     // this.retriever.getActualWeatherObservable().subscribe((weather) => this.actualWeather = weather);
-    return this.retriever.getForecastObservable();
+    return this.retriever.getForecastObservable(this.selectedValue);
   }
 
   ngOnInit() {
+
+    this.templist = [];
+    this.preclist = [];
+    this.datelist = [];
+    this.iconlist = [];
 
     this.getForecast().subscribe((res: Weather[]) => {
       res.forEach(y => {
