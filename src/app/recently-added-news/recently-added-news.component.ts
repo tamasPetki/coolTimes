@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {DialogService} from '../dialog.service';
+import {News} from '../news';
 
 @Component({
   selector: 'app-recently-added-news',
@@ -6,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recently-added-news.component.css']
 })
 export class RecentlyAddedNewsComponent implements OnInit {
+  @Input() news: News[];
 
-  constructor() { }
+  constructor(public dialog: DialogService) { }
 
   ngOnInit() {
   }

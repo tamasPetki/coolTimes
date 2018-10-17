@@ -17,7 +17,7 @@
         <a class="nav-link" href="#">POLITICS</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">ECONOMY</a>
+        <a class="nav-link" href="#">CULTURE</a>
       </li>
     </ul>
     <span class="navbar-text p-2">
@@ -34,5 +34,5 @@
 
 <app-weather *ngIf="showWeather"></app-weather>
 <app-main-news></app-main-news>
-<app-secondary-news></app-secondary-news>
+<app-secondary-news [news]="news"></app-secondary-news>
 <app-recently-added-news></app-recently-added-news>

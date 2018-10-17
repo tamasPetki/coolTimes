@@ -11,6 +11,8 @@ import { SecondaryNewsComponent } from './secondary-news/secondary-news.componen
 import { RecentlyAddedNewsComponent } from './recently-added-news/recently-added-news.component';
 import { HttpClientModule} from '@angular/common/http';
 import { WeatherComponent } from './weather/weather.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { WeatherComponent } from './weather/weather.component';
     MainNewsComponent,
     SecondaryNewsComponent,
     RecentlyAddedNewsComponent,
-    WeatherComponent
+    WeatherComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -26,9 +29,11 @@ import { WeatherComponent } from './weather/weather.component';
     NgbModule.forRoot(),
     MatCardModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DialogComponent]
 })
 export class AppModule { }
