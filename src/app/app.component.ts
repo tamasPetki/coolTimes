@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
 
   toggleWeather() {
     this.showWeather = !this.showWeather;
+    console.log(this.actualWeather);
   }
 
 

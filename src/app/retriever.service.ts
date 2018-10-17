@@ -3,6 +3,7 @@ import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {News} from './news';
 import {ActualWeather} from './actual-weather';
+import {Weather} from './weather/weather';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,10 @@ export class RetrieverService {
 
   public getActualWeatherObservable(): Observable<ActualWeather> {
     return this.http.get<ActualWeather>('http://localhost:8080/weather');
+  }
+
+  public getForecastObservable(): Observable<Weather[]> {
+    return this.http.get<Weather[]>('http://localhost:8080/forecast');
   }
 
   public getNameDayObservable(): Observable<string> {

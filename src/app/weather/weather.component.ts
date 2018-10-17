@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Chart } from 'chart.js';
 import {Weather} from './weather';
+import {RetrieverService} from '../retriever.service';
 
 @Component({
   selector: 'app-weather',
@@ -17,19 +18,17 @@ export class WeatherComponent implements OnInit {
   iconChart = [];
   dataChart = [];
 
-  icons = {'01d': new Image(), a: 1}
 
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private retriever: RetrieverService) { }
 
   getForecast() {
-    return this.http.get('/assets/weather.json');
+    // return this.http.get('/assets/weather.json');
+
+    // this.retriever.getActualWeatherObservable().subscribe((weather) => this.actualWeather = weather);
+    return this.retriever.getForecastObservable();
   }
 
   ngOnInit() {
-
-    const sun2 = new Image();
-    sun2.src = '/assets/sun2.png';
 
     this.getForecast().subscribe((res: Weather[]) => {
       res.forEach(y => {
@@ -37,59 +36,6 @@ export class WeatherComponent implements OnInit {
         this.preclist.push(y.prec);
         this.datelist.push(y.time);
         this.iconlist.push(y.icon);
-      });
-
-      this.iconChart = new Chart('iconCanvas', {
-        type: 'bar',
-        data: {
-          labels: this.datelist,
-          datasets: [
-            {
-              data: this.iconlist,
-              borderColor: '#FFFFFF',
-              fill: false,
-              type: 'line',
-              showLine: false,
-              pointStyle: sun2,
-              yAxisID: 'A'
-            }
-          ]
-        },
-        options: {
-          title: {
-            display: true,
-            text: 'Weather forecast for your location',
-            fontcolor: '#3E4144',
-            color: 'black',
-            fontStyle: 'normal',
-            fontSize: 20
-          },
-          layout: {
-            padding: {
-              left: 25,
-              right: 25,
-            }
-          },
-          legend: {
-            display: false
-          },
-          scales: {
-            xAxes: [{
-              display: false
-            }],
-            yAxes: [
-              {
-                display: false,
-                id: 'A',
-                position: 'left'
-              },
-              {
-                display: false,
-                id: 'B',
-                position: 'right'
-              }],
-          }
-        }
       });
 
       this.dataChart = new Chart('dataCanvas', {
@@ -138,8 +84,7 @@ export class WeatherComponent implements OnInit {
                   position: 'right',
                   ticks: {
                     min: 0,
-                    max: 9,
-                    stepSize: 3
+                    suggestedMax: 3
                   }
                 }],
             }
