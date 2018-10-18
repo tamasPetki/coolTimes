@@ -16,13 +16,13 @@ export class WeatherComponent implements OnInit {
   preclist = [];
   iconlist = [];
   iconChart = [];
-  dataChart = [];
+  dataChart;
   cities = [
     {id: 1, name: 'Budapest'},
     {id: 2, name: 'London'},
-    {id: 3, name: 'Párizs'},
+    {id: 3, name: 'Paris'},
     {id: 4, name: 'Madrid'},
-    {id: 5, name: 'Moszkva'}
+    {id: 5, name: 'Moscow'}
   ];
   selectedValue = 'Budapest';
 
@@ -50,6 +50,7 @@ export class WeatherComponent implements OnInit {
         this.iconlist.push(y.icon);
       });
 
+      if (this.dataChart) { this.dataChart.destroy(); }
       this.dataChart = new Chart('dataCanvas', {
           type: 'bar',
           data: {
@@ -68,13 +69,60 @@ export class WeatherComponent implements OnInit {
                 borderColor: '#0099cc',
                 backgroundColor: '#0099cc',
                 fill: false,
-                yAxisID: 'B'
+                yAxisID: 'B',
+                datalabels: {
+                  align: 'center',
+                  anchor: 'center'
+                }
               }
             ]
           },
           options: {
+
+            tooltips: {
+              enabled: true
+            },
+            hover: {
+              animationDuration: 1
+            },
+            animation: {
+              duration: 1,
+              onComplete: function () {
+                const chartInstance = this.chart,
+                  ctx = chartInstance.ctx;
+                ctx.textAlign = 'center';
+                ctx.fillStyle = 'rgba(0, 0, 0, 1)';
+                ctx.textBaseline = 'bottom';
+
+                const dataset = this.data.datasets[0];
+                const meta = chartInstance.controller.getDatasetMeta(0);
+                meta.data.forEach(function (bar, index) {
+                  const data = dataset.data[index];
+                  ctx.fillText(data, bar._model.x, bar._model.y - 5);
+                });
+              }
+            },
+
+
+            plugins: {
+              datalabels: {
+                color: 'white',
+                display: function(context) {
+                  return context.dataset.data[context.dataIndex] > 0;
+                },
+                font: {
+                  weight: 'bold'
+                },
+                formatter: Math.round,
+
+                title: false
+              }
+            },
             legend: {
               display: false
+            },
+            pieceLabel: {
+              render: 'value' //show values
             },
             scales: {
               xAxes: [{
@@ -100,9 +148,10 @@ export class WeatherComponent implements OnInit {
                   }
                 }],
             }
-          }
-        }
-      );
+
+          }}
+        );
+
     });
   }
 
