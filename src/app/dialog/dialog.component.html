@@ -1,7 +1,8 @@
 <h2 mat-dialog-title class="px-4">{{ title }}</h2>
 
-<mat-dialog-content>
-  <div [innerHTML]="article" class="px-4"></div>
+<mat-dialog-content class="p-4">
+  <img src="{{ imageurl }}" class="pr-4" align="left" style="max-height: 300px; width: auto;">
+  <div [innerHTML]="article"></div>
 </mat-dialog-content>
 
 <mat-card-actions class="p-2">

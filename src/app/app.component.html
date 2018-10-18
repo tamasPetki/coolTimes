@@ -1,23 +1,22 @@
 <div class="container mb-4">
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <!--<a class="navbar-brand" href="#">COOL TIMES</a>-->
     <img src="src/assets/cooltimes_logo.png" width="180px">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" (click)="this.retriever.changeTopic('MAIN')">MAIN<span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <a class="nav-link" style="cursor: pointer;" [ngClass]="(this.retriever.activeTab=='MAIN')?'nav-link active':'nav-link'" (click)="this.retriever.changeTopic('MAIN')">MAIN</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" (click)="this.retriever.changeTopic('TECH')">TECH</a>
+        <a class="nav-link" style="cursor: pointer;" [ngClass]="(this.retriever.activeTab=='TECH')?'nav-link active':'nav-link'" (click)="this.retriever.changeTopic('TECH')">TECH</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" (click)="this.retriever.changeTopic('SPORT')" href="#">SPORT</a>
+        <a class="nav-link" style="cursor: pointer;" [ngClass]="(this.retriever.activeTab=='SPORT')?'nav-link active':'nav-link'" (click)="this.retriever.changeTopic('SPORT')">SPORT</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" (click)="this.retriever.changeTopic('POLITICS')" href="#">POLITICS</a>
+        <a class="nav-link" style="cursor: pointer;" [ngClass]="(this.retriever.activeTab=='POLITICS')?'nav-link active':'nav-link'" (click)="this.retriever.changeTopic('POLITICS')">POLITICS</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" (click)="this.retriever.changeTopic('CULTURE')">CULTURE</a>
+        <a class="nav-link" style="cursor: pointer;" [ngClass]="(this.retriever.activeTab=='CULTURE')?'nav-link active':'nav-link'" (click)="this.retriever.changeTopic('CULTURE')">CULTURE</a>
       </li>
     </ul>
     <span *ngIf="actualWeather" class="navbar-text p-2">

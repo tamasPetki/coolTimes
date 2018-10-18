@@ -1,5 +1,5 @@
 <div class="container" *ngIf="this.retriever.mainNews != null">
-<mat-card class="mb-3" (click)="dialog.openDialog(this.retriever.mainNews.article, this.retriever.mainNews.title)">
+<mat-card class="mb-3" (click)="dialog.openDialog(this.retriever.mainNews.article, this.retriever.mainNews.title, this.retriever.mainNews.imgurl)">
   <img mat-card-image [src]=this.retriever.mainNews.imgurl
        alt="{{ this.retriever.mainNews.title }}">
   <mat-card-content>

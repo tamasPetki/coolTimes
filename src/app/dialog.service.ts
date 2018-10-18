@@ -9,7 +9,7 @@ export class DialogService {
 
   constructor(private dialog: MatDialog) { }
 
-  openDialog(article: string, title: string) {
+  openDialog(article: string, title: string, imgurl: string) {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.autoFocus = true;
@@ -17,7 +17,8 @@ export class DialogService {
 
     dialogConfig.data = {
       title: title,
-      article: article
+      article: article,
+      imageurl: imgurl
     };
 
     this.dialog.open(DialogComponent, dialogConfig);

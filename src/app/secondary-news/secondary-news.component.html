@@ -1,7 +1,7 @@
 <div class="container" *ngIf="this.retriever.secondaryMainNews != null">
   <div class="row align-items-stretch">
     <div class="col-md-4 d-flex mb-4" *ngFor="let new of this.retriever.secondaryMainNews">
-      <mat-card (click)="dialog.openDialog(new.article, new.title)">
+      <mat-card (click)="dialog.openDialog(new.article, new.title, new.imgurl)">
         <img mat-card-image style="max-height: 220px; object-fit: cover" src="{{ new.imgurl }}" alt="photo">
         <mat-card-title-group>
           <div mat-card-avatar class="example-header-image"></div>

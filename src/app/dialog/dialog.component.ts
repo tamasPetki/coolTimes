@@ -10,10 +10,12 @@ export class DialogComponent implements OnInit {
 
   article: string;
   title: string;
+  imageurl: string;
 
   constructor(public dialogRef: MatDialogRef<DialogComponent>, @Inject(MAT_DIALOG_DATA) data) {
     this.title = data.title;
     this.article = data.article;
+    this.imageurl = data.imageurl;
   }
 
   close() {

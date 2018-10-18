@@ -14,6 +14,7 @@ export class RetrieverService {
   public mainNews: News;
   public secondaryMainNews: News[];
   public randomthree: News[];
+  activeTab = 'MAIN';
 
   constructor(private http: HttpClient) {
   }
@@ -24,45 +25,50 @@ export class RetrieverService {
         this.getMainNewsSecondaryObservable().subscribe((news) => this.secondaryMainNews = news, (error) => console.log(error));
         this.getMainNewsObservable().subscribe((news) => this.mainNews = news, (error) => console.log(error));
         this.getRandomThreeObservable().subscribe((news) => this.randomthree = news, (error) => console.log(error));
+        this.activeTab = 'MAIN';
         break;
       }
       case 'TECH': {
         this.mainNews = null;
         this.secondaryMainNews = null;
         this.getTechNewsObservable().subscribe((news) => this.secondaryMainNews = news, (error) => console.log(error));
+        this.activeTab = 'TECH';
         break;
       }
       case 'POLITICS': {
         this.mainNews = null;
         this.secondaryMainNews = null;
         this.getPoliticsObservable().subscribe((news) => this.secondaryMainNews = news, (error) => console.log(error));
+        this.activeTab = 'POLITICS';
         break;
       }
       case 'CULTURE': {
         this.mainNews = null;
         this.secondaryMainNews = null;
         this.getCultureObservable().subscribe((news) => this.secondaryMainNews = news, (error) => console.log(error));
+        this.activeTab = 'CULTURE';
         break;
       }
       case 'SPORT': {
         this.mainNews = null;
         this.secondaryMainNews = null;
         this.getSportObservable().subscribe((news) => this.secondaryMainNews = news, (error) => console.log(error));
+        this.activeTab = 'SPORT';
         break;
       }
     }
   }
 
   public getActualWeatherObservable(): Observable<ActualWeather> {
-    return this.http.get<ActualWeather>('http://localhost:8080/weather');
+    return this.http.get<ActualWeather>('https://sleepy-woodland-71007.herokuapp.com/weather');
   }
 
   public getForecastObservable(city: string): Observable<Weather[]> {
-    return this.http.get<Weather[]>('http://localhost:8080/forecast/?city=' + city);
+    return this.http.get<Weather[]>('https://sleepy-woodland-71007.herokuapp.com/forecast/?city=' + city);
   }
 
   public getNameDayObservable(): Observable<string> {
-    return this.http.get('http://localhost:8080/nameday', {responseType: 'text'});
+    return this.http.get('https://sleepy-woodland-71007.herokuapp.com/nameday', {responseType: 'text'});
   }
 
 
@@ -94,8 +100,4 @@ export class RetrieverService {
     return this.http.get<News[]>('https://gentle-stream-55752.herokuapp.com/news/latestthree');
   }
 
-
-  public getMainNews() {
-    this.getMainNewsObservable().subscribe((news) => this.mainNews = news, (error) => console.log(error));
-  }
 }
