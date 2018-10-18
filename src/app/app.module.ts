@@ -14,6 +14,7 @@ import { WeatherComponent } from './weather/weather.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
 import { FormsModule } from '@angular/forms';
+import {RetrieverService} from './retriever.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { FormsModule } from '@angular/forms';
     MatDialogModule,
     FormsModule
   ],
-  providers: [],
+  providers: [RetrieverService],
   bootstrap: [AppComponent],
   entryComponents: [DialogComponent]
 })

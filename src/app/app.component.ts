@@ -22,12 +22,20 @@ export class AppComponent implements OnInit {
     console.log(this.actualWeather);
   }
 
-
-  constructor(private retriever: RetrieverService) {}
+  constructor(public retriever: RetrieverService) {}
 
   ngOnInit() {
-    // this.retriever.getNewsObservable().subscribe((news) => this.news = news);
     this.retriever.getActualWeatherObservable().subscribe((weather) => this.actualWeather = weather);
     this.retriever.getNameDayObservable().subscribe((name) => this.nameDay = name);
+
+    this.retriever.getMainNewsSecondaryObservable().subscribe((news) => this.retriever.secondaryMainNews = news,
+      (error) => console.log(error),
+      () => console.log('ready'));
+    this.retriever.getMainNewsObservable().subscribe((news) => this.retriever.mainNews = news,
+      (error) => console.log(error),
+      () => console.log('ready'));
+    this.retriever.getRandomThreeObservable().subscribe((news) => this.retriever.randomthree = news,
+      (error) => console.log(error),
+      () => console.log('ready'));
   }
 }

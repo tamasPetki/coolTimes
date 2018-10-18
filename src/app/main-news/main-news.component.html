@@ -1,11 +1,10 @@
-<div class="container">
-<mat-card class="mb-3">
-  <img mat-card-image src="http://mercadopopular.org/wp-content/uploads/2015/07/Donald-Trump-angry.jpg"
-       alt="Photo of a Shiba Inu">
+<div class="container" *ngIf="this.retriever.mainNews != null">
+<mat-card class="mb-3" (click)="dialog.openDialog(this.retriever.mainNews.article, this.retriever.mainNews.title)">
+  <img mat-card-image [src]=this.retriever.mainNews.imgurl
+       alt="{{ this.retriever.mainNews.title }}">
   <mat-card-content>
-    <h1 class="display-4 font-italic">{{ "Donald Trump Achieves World Peace!" }}</h1>
-    <p class="lead my-3">The world rejoiced today as The Apprentice's Donald J. Trump brokered a deal with all nations
-      that would create everlasting peace and prospetiy. The UN agreed to disband in...</p>
+    <h1 class="display-4 font-italic">{{ this.retriever.mainNews.title }}</h1>
+    <p class="lead my-3">{{ this.retriever.mainNews.summary }}</p>
     <p class="lead mb-0"><a href="#" class="font-weight-bold">Continue reading...</a></p>
   </mat-card-content>
 </mat-card>

@@ -5,19 +5,19 @@
     <img src="src/assets/cooltimes_logo.png" width="180px">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">MAIN<span class="sr-only">(current)</span></a>
+        <a class="nav-link" (click)="this.retriever.changeTopic('MAIN')">MAIN<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">TECH</a>
+        <a class="nav-link" (click)="this.retriever.changeTopic('TECH')">TECH</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">SPORT</a>
+        <a class="nav-link" (click)="this.retriever.changeTopic('SPORT')" href="#">SPORT</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">POLITICS</a>
+        <a class="nav-link" (click)="this.retriever.changeTopic('POLITICS')" href="#">POLITICS</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">CULTURE</a>
+        <a class="nav-link" (click)="this.retriever.changeTopic('CULTURE')">CULTURE</a>
       </li>
     </ul>
     <span *ngIf="actualWeather" class="navbar-text p-2">
@@ -33,6 +33,6 @@
 </div>
 
 <app-weather *ngIf="showWeather"></app-weather>
-<app-main-news></app-main-news>
-<app-secondary-news [news]="news"></app-secondary-news>
-<app-recently-added-news></app-recently-added-news>
+<app-main-news [news]="this.retriever.mainNews"></app-main-news>
+<app-secondary-news [news]="this.retriever.secondaryMainNews"></app-secondary-news>
+<app-recently-added-news [news]="this.retriever.randomthree"></app-recently-added-news>
