@@ -13,7 +13,7 @@ import {DialogService} from '../dialog.service';
 export class SecondaryNewsComponent implements OnInit {
   @Input() news: News[];
 
-  constructor(private retriever: RetrieverService, public dialog: DialogService) { }
+  constructor(public retriever: RetrieverService, public dialog: DialogService) { }
 
   ngOnInit() {
   }

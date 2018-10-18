@@ -12,11 +12,18 @@ import {DialogComponent} from './dialog/dialog.component';
 export class AppComponent implements OnInit {
 
   title = 'CoolTimes';
-  news: News[];
 
-  constructor(private retriever: RetrieverService) {}
+  constructor(public retriever: RetrieverService) {}
 
   ngOnInit() {
-    this.retriever.getNewsObservable().subscribe((news) => this.news = news);
+    this.retriever.getMainNewsSecondaryObservable().subscribe((news) => this.retriever.secondaryMainNews = news,
+      (error) => console.log(error),
+      () => console.log('ready'));
+    this.retriever.getMainNewsObservable().subscribe((news) => this.retriever.mainNews = news,
+      (error) => console.log(error),
+      () => console.log('ready'));
+    this.retriever.getRandomThreeObservable().subscribe((news) => this.retriever.randomthree = news,
+      (error) => console.log(error),
+      () => console.log('ready'));
   }
 }

@@ -12,6 +12,7 @@ import { RecentlyAddedNewsComponent } from './recently-added-news/recently-added
 import { HttpClientModule} from '@angular/common/http';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
+import {RetrieverService} from './retriever.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { DialogComponent } from './dialog/dialog.component';
     HttpClientModule,
     MatDialogModule
   ],
-  providers: [],
+  providers: [RetrieverService],
   bootstrap: [AppComponent],
   entryComponents: [DialogComponent]
 })
