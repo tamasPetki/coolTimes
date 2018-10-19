@@ -15,6 +15,7 @@ export class RetrieverService {
   public secondaryMainNews: News[];
   public randomthree: News[];
   activeTab = 'MAIN';
+  public advert: {adImgURL: string};
 
   constructor(private http: HttpClient) {
   }
@@ -32,6 +33,7 @@ export class RetrieverService {
         this.mainNews = null;
         this.secondaryMainNews = null;
         this.getTechNewsObservable().subscribe((news) => this.secondaryMainNews = news, (error) => console.log(error));
+        this.getTechAD().subscribe((advert) => this.advert = advert, (error) => console.log(error));
         this.activeTab = 'TECH';
         break;
       }
@@ -100,4 +102,19 @@ export class RetrieverService {
     return this.http.get<News[]>('https://gentle-stream-55752.herokuapp.com/news/latestthree');
   }
 
+  public getTechAD(): Observable<{adImgURL: string}> {
+    return this.http.get<{adImgURL: string}>('https://gentle-crag-70979.herokuapp.com/tech');
+  }
+
+  public getSportsAD(): Observable<{adImgURL: string}> {
+    return this.http.get<{adImgURL: string}>('https://gentle-crag-70979.herokuapp.com/tech');
+  }
+
+  public getPoliticsAD(): Observable<{adImgURL: string}> {
+    return this.http.get<{adImgURL: string}>('https://gentle-crag-70979.herokuapp.com/tech');
+  }
+
+  public getCultureAD(): Observable<{adImgURL: string}> {
+    return this.http.get<{adImgURL: string}>('https://gentle-crag-70979.herokuapp.com/tech');
+  }
 }
