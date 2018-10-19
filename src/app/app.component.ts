@@ -37,5 +37,6 @@ export class AppComponent implements OnInit {
     this.retriever.getRandomThreeObservable().subscribe((news) => this.retriever.randomthree = news,
       (error) => console.log(error),
       () => console.log('ready'));
+    this.retriever.getCultureAD().subscribe((advert) => this.retriever.advert = advert, (error) => console.log(error));
   }
 }

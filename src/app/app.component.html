@@ -36,5 +36,5 @@
 <app-secondary-news [news]="this.retriever.secondaryMainNews"></app-secondary-news>
 <app-recently-added-news [news]="this.retriever.randomthree"></app-recently-added-news>
 <div class="container">
-<img src="{{ this.retriever.advert.adImgURL }}" style="max-width: 100%; height: auto">
+<img src="{{ this.retriever.advert.adImgURL }}" style="max-width: 100%; height: auto" *ngIf="this.retriever.advert != null">
 </div>

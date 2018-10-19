@@ -41,6 +41,7 @@ export class RetrieverService {
         this.mainNews = null;
         this.secondaryMainNews = null;
         this.getPoliticsObservable().subscribe((news) => this.secondaryMainNews = news, (error) => console.log(error));
+        this.getPoliticsAD().subscribe((advert) => this.advert = advert, (error) => console.log(error));
         this.activeTab = 'POLITICS';
         break;
       }
@@ -48,6 +49,7 @@ export class RetrieverService {
         this.mainNews = null;
         this.secondaryMainNews = null;
         this.getCultureObservable().subscribe((news) => this.secondaryMainNews = news, (error) => console.log(error));
+        this.getCultureAD().subscribe((advert) => this.advert = advert, (error) => console.log(error));
         this.activeTab = 'CULTURE';
         break;
       }
@@ -55,6 +57,7 @@ export class RetrieverService {
         this.mainNews = null;
         this.secondaryMainNews = null;
         this.getSportObservable().subscribe((news) => this.secondaryMainNews = news, (error) => console.log(error));
+        this.getSportsAD().subscribe((advert) => this.advert = advert, (error) => console.log(error));
         this.activeTab = 'SPORT';
         break;
       }
@@ -107,14 +110,18 @@ export class RetrieverService {
   }
 
   public getSportsAD(): Observable<{adImgURL: string}> {
-    return this.http.get<{adImgURL: string}>('https://gentle-crag-70979.herokuapp.com/tech');
+    return this.http.get<{adImgURL: string}>('https://gentle-crag-70979.herokuapp.com/sport');
   }
 
   public getPoliticsAD(): Observable<{adImgURL: string}> {
-    return this.http.get<{adImgURL: string}>('https://gentle-crag-70979.herokuapp.com/tech');
+    return this.http.get<{adImgURL: string}>('https://gentle-crag-70979.herokuapp.com/politics');
   }
 
   public getCultureAD(): Observable<{adImgURL: string}> {
-    return this.http.get<{adImgURL: string}>('https://gentle-crag-70979.herokuapp.com/tech');
+    return this.http.get<{adImgURL: string}>('https://gentle-crag-70979.herokuapp.com/culture');
+  }
+
+  public getMainAD(): Observable<{adImgURL: string}> {
+    return this.http.get<{adImgURL: string}>('https://gentle-crag-70979.herokuapp.com/main');
   }
 }
